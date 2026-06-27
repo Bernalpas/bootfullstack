@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro a CSS - Estilos</title>
+
+  <!-- Vinculo este html con el css correspondiente -->
+  <link rel="stylesheet" href="./index.css">
+
+  <style>
+
+    /* dentro de la etiqueta de style escribimos en código css */
+    p{/* selector: elemento al que apunta los estilos */
+      color: green;
+      /* propiedad: color  -  valor: green - punto y coma al final*/
+      font-size: 32px;
+    }
+
+    #unico{/* el numeral le indica al css que el elemento tiene un ID */
+      color: red;
+      font-size: 36px;
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <h1>
+    Tipos de implementación de CSS en HTML
+  </h1>
+
+  <ol>
+    <li>
+      Implementación en línea.
+    </li>
+    <li>
+      Implementación en el archivo de HTML
+    </li>
+    <li>
+      Implementación externa de un archivo CSS
+    </li>
+  </ol>
+
+  <h2> 
+    Ejercicios de Implementación
+  </h2>
+
+  <h2>
+    Ejercicio 1: En línea
+  </h2>
+
+  <!-- color => equivale al color de texto del elemento párrafo -->
+  <!-- font-siza => modificamos el tamaño del texto, de 16 px a 24px -->
+  <p style="color: blue;  font-size: 24px;">
+    Estilos en línea son aquellos asignados a los elementos como un atributo. El atributo es el style.
+  </p>
+
+
+  <h2>
+    Ejercicio 2: Implementación en el archivo
+  </h2>
+
+  <!-- Elemento que contiene los estilos en un archivo de html -->
+
+  <p>
+    Implementamos los estilos  dentro del archivo de html, se puede en cualquier lugar, 
+    pero lo recomendable es en el head del archivo
+  </p>
+  <p id="unico">
+    Implementamos los estilos  dentro del archivo de html, se puede en cualquier lugar, 
+    pero lo recomendable es en el head del archivo
+  </p>
+  <p>
+    Implementamos los estilos  dentro del archivo de html, se puede en cualquier lugar, 
+    pero lo recomendable es en el head del archivo
+  </p>
+  <p>
+    Implementamos los estilos  dentro del archivo de html, se puede en cualquier lugar, 
+    pero lo recomendable es en el head del archivo
+  </p>
+
+  <h2>
+    Ejercicio 3: Implementación en un archivo de CSS
+  </h2>
+
+  <main>
+    <figure>
+          <!-- imagen  -->
+          <a href="detalle.html">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS11md38vGAditW_k8WhSZ4Bj1B0HSfDHSKvDvg93QPbx4UL2mQC27TaveR&s=10" title="Productos para la venta" alt="Productos en una góndola">
+          </a>
+          <button>
+            Comprar esta zapatilla de X
+          </button>
+          <figcaption>
+            Productos en una góndola
+          </figcaption>
+    </figure>
+  </main>
+  
+</body>
+</html>

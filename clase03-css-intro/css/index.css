@@ -10,11 +10,6 @@ figcaption{
   text-align: center;
 }
 
-/* Asignar estilos al body */
-body{
-  /* color de fondo - color elegido */
-  background-color: rgb(220, 220, 207);
-}
 
 /* Selecto con el id unico */
 #unico{

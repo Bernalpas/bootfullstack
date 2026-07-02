@@ -1,0 +1,86 @@
+
+/* Asignar estilos al body */
+body{
+  /* color de fondo - color elegido */
+  background-color: rgb(220, 220, 207);
+}
+
+h2{/* selector de tipo global: todas las etiquetas */
+  text-align: center;
+}
+
+/* Selector por nombre o id */
+#ejerciciodos{
+  text-align: left; /* alineación a la izquierda */
+}
+
+/* Asignando un nombre de grupo */
+.alineacionderecha{
+  text-align: right;/* alineación a la derecha */
+}
+
+
+.titulosgenerales{
+  text-align: right;
+  color: green;
+  font-size: 40px;
+}
+
+p{
+  text-align: right;
+}
+
+img{
+  text-align: right;
+}
+
+button{
+  background-color: rgb(150, 150, 222);
+}
+
+.botonpanel{
+  /* ancho */
+  width: 80px;
+  /* altura */
+  height: 40px;
+  /* borde */
+  border-color: blue;
+  /* color de fondo */
+  background-color: aliceblue;
+}
+
+#celeste{
+  background-color: rgb(150, 150, 222);
+}
+
+p{
+  text-align: justify;
+  /* ancho:  */
+  width: 600px;
+  /* tenaformación de texto */
+
+}
+
+#minusculas{
+  /* tipo de vista de texto */
+  text-transform: lowercase;
+  /* subrayado */
+  text-decoration: underline;
+}
+
+
+#mayusculas{
+  text-transform: uppercase;
+  text-decoration: overline;
+}
+
+#capital{
+  text-transform: capitalize;
+  text-decoration: line-through;
+}
+
+#ninguno{
+  text-transform: none;
+  text-decoration: none;
+}
+

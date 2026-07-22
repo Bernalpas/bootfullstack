@@ -1,0 +1,25 @@
+
+#####
+Comandos de Inicio de Repo
+#####
+
+1. git int
+2. git status
+3. git add .
+4. git commit -m "mensaje"
+5. git push origin master/main
+
+
+#####
+Comandos de Ramas en Git
+#####
+6. git branch
+7. git branch nombredelanuevarama
+6. git checkout nombredelarama
+7. git push origin nombredelarama
+
+#####
+Comandos de tareas colaborativas
+#####
+
+8. git pull origin master

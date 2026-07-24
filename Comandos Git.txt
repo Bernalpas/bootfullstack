@@ -17,6 +17,8 @@ Comandos de Ramas en Git
 7. git branch nombredelanuevarama
 6. git checkout nombredelarama
 7. git push origin nombredelarama
+8. git branch --list
+9. git branch -l
 
 #####
 Comandos de tareas colaborativas

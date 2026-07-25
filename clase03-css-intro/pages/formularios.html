@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularios</title>
+</head>
+<body>
+
+  <h1>
+    Mi Primer Formulario en HTML
+  </h1>
+
+  <!-- todos los elementos que necesito deben estar dentro del form -->
+  <!-- action: indicar al form el archivo donde enviará los datos  -->
+  <form id="" class="" action="login.js" method="get">
+
+    <!-- label: guía para el user -->
+    <label for="nombre">Nombre: </label>
+    <input type="text" id="nombre" name="nombre"><!-- rol: introducimos texto -->
+    <br>
+    <label for="apellido">Apellido: </label>
+    <input type="text" id="apellido" name="apellido" minlength="5"><!-- longitud mínima de 5 caracteres -->
+    <br>
+    <label for="email">Email: </label>
+    <input type="email" name="email" id="email" required>
+    <br>
+    <label for="password">Password: </label>
+    <input type="password" name="password" minlength="5" maxlength="15" required><!-- longitud máxima de 15 caracteres -->
+    <br>
+    <label for="edad">Edad: </label>
+    <input type="number" name="edad" id="edad" min="0" max="100"> <!-- números mínimos y máximos -->
+    <br>
+    <label for="provincia">Provincia: </label>
+    <input type="text" placeholder="Mendoza">
+    <br>
+    <label for="pais">Pais: </label>
+    <select name="pais" id="pais"> 
+      <option value="argentina">Argentina</option>
+      <option value="brasil">Brasil</option>
+      <option value="chile">Chile</option>
+      <option value="ururguay">Uruguay</option>
+    </select>
+    <br>
+    <label for="deportes">Deportes: </label>
+    <input type="checkbox"> <span>Fútbol</span>
+    <input type="checkbox"> <span>Natación</span>
+    <input type="checkbox"> <span>Box</span>
+    <br>
+    <label for="viaje">Viaja: </label>
+    <input type="radio" name="viaje" value="solo"> <span>Sólo</span>
+    <input type="radio" name="viaje" value="acompañado"> <span>Acompañado</span>
+    <br>
+
+
+
+    <button id="" class="" type="reset"> <!-- rol del botón - limpiar los inputs -->
+      Limpiar Datos
+    </button>
+
+    <input type="reset" value="Volver a Borrar con Input">
+
+    <input type="submit" value="Volver a Enviar con Input"><!-- misma tarea con input -->
+
+    <button id="" class="" type="submit"><!-- rol del botón - enviar los datos -->
+      Enviar Datos
+    </button>
+
+  </form>
+  
+</body>
+</html>

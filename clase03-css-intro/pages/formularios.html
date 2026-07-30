@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/formularios.css">
   <title>Formularios</title>
 </head>
 <body>
@@ -13,20 +14,43 @@
 
   <!-- todos los elementos que necesito deben estar dentro del form -->
   <!-- action: indicar al form el archivo donde enviará los datos  -->
-  <form id="" class="" action="login.js" method="get">
+  <form 
+    id="" 
+    class="" 
+    action="login.js" 
+    method="get" 
+    autocomplete="off"
+    > <!-- method: get o post - autocomplete: autocompletado de datos -->
+
+    <!-- grupo de elementos relacionados y coloca un borde al form -->
+    <fieldset>
+
+      <legend>Formulario de Registro</legend><!-- seía el titulo del form -->
+
 
     <!-- label: guía para el user -->
-    <label for="nombre">Nombre: </label>
-    <input type="text" id="nombre" name="nombre"><!-- rol: introducimos texto -->
+    <label for="nombre">
+      Nombre: 
+    </label>
+    <input 
+      type="text" 
+      id="nombre" 
+      name="nombre"
+      ><!-- rol: introducimos texto -->
     <br>
     <label for="apellido">Apellido: </label>
-    <input type="text" id="apellido" name="apellido" minlength="5"><!-- longitud mínima de 5 caracteres -->
+    <input 
+      type="text" 
+      id="apellido" 
+      name="apellido" 
+      minlength="5"
+      ><!-- longitud mínima de 5 caracteres -->
     <br>
     <label for="email">Email: </label>
     <input type="email" name="email" id="email" required>
     <br>
     <label for="password">Password: </label>
-    <input type="password" name="password" minlength="5" maxlength="15" required><!-- longitud máxima de 15 caracteres -->
+    <input type="password" id="password" name="password" minlength="5" maxlength="15" required><!-- longitud máxima de 15 caracteres -->
     <br>
     <label for="edad">Edad: </label>
     <input type="number" name="edad" id="edad" min="0" max="100"> <!-- números mínimos y máximos -->
@@ -52,6 +76,85 @@
     <input type="radio" name="viaje" value="acompañado"> <span>Acompañado</span>
     <br>
 
+    <label for="comentarios">Comentarios: </label>
+    <textarea 
+      name="comentarios" 
+      id="comentarios" 
+      cols="30" 
+      rows="10" 
+      placeholder="Escriba aquí sus comentarios..."
+      ></textarea>
+
+      <br>
+
+      <!-- disabled: deshabilita el elemento -->
+      <button 
+        type="button" 
+        style="background-color: #4CAF50; color: white; padding: 10px 20px; cursor: pointer;"
+        onclick="login()"
+      >
+        Enviar solo Email y Password
+    </button>
+    <br>
+
+    <label for="rango">Rango de Respuesta: </label>
+    <input 
+      type="range"
+      min="0"
+      max="10"
+      step="1"
+      value="7"
+      >
+
+    <br>
+
+    <label for="archivo">Subir Archivo: </label>
+    <input 
+      type="file" 
+      name="archivo" 
+      id="archivo"
+      accept=".jpg, .jpeg, .png, .pdf"
+      multiple
+      >
+
+      <br>
+
+    <label for="fechanacimiento">Nacimiento: </label>
+    <input 
+      type="date" 
+      name="fechanacimiento" 
+      id="fechanacimiento"
+      min="1926-01-01"
+      max="2026-12-31"
+      >
+
+      <br>
+
+      <label for="horario">Horario:</label>
+      <input 
+        type="time" 
+        name="horario" 
+        id="horario"
+        min="08:00"
+        max="18:00"
+        >
+
+        <br>
+
+        <label for="mesvencimiento">Mes de Vencimiento:</label>
+        <input 
+          type="month" 
+          name="mesvencimiento" 
+          id="mesvencimiento"
+          min="2023-01"
+          max="2030-12"
+          >
+
+        <br>
+
+
+
+
 
 
     <button id="" class="" type="reset"> <!-- rol del botón - limpiar los inputs -->
@@ -66,7 +169,11 @@
       Enviar Datos
     </button>
 
+    </fieldset>
+
   </form>
-  
+
+  <!-- Vinculamos este html con login.js -->
+  <script src="../js/login.js"></script>
 </body>
 </html>

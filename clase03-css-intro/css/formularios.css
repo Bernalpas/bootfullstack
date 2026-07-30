@@ -1,0 +1,45 @@
+
+/* Declaración de variables */
+/* 1. Una variable se declara con --nombre-variable: valor; */
+
+:root{/* alcance de las variables: todo el documento */
+  --color-titulo: rgb(2, 2, 67);
+  --color-fondo: #ccf2f5;
+}
+
+
+/* reseteo básico de css: anular los estilos por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+form{
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+
+/* 2. Usar las variables */
+h1{
+  text-align: center;
+  margin: 15px 0;
+  color: var(--color-titulo);
+}
+
+input, select{
+  width: 35%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+/* usamos la variable del color de fondo */
+body{
+  background-color: var(--color-fondo);
+}

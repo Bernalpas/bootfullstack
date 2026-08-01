@@ -36,6 +36,8 @@
       type="text" 
       id="nombre" 
       name="nombre"
+      pattern="[a-z]{3,25}"
+      title="Ingrese solo letras minúsculas y 3 a 25 caracteres"
       ><!-- rol: introducimos texto -->
     <br>
     <label for="apellido">Apellido: </label>
@@ -54,6 +56,9 @@
     <br>
     <label for="edad">Edad: </label>
     <input type="number" name="edad" id="edad" min="0" max="100"> <!-- números mínimos y máximos -->
+    <br>
+    <label for="fecha">Números: </label><!-- regex: patrones de validación de datos -->
+    <input type="number" name="fecha" id="numero" pattern="[0-9]+" title="Ingrese solo números"> 
     <br>
     <label for="provincia">Provincia: </label>
     <input type="text" placeholder="Mendoza">
@@ -172,6 +177,25 @@
     </fieldset>
 
   </form>
+
+  <h2>
+    Jerarquias en CSS
+  </h2>
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem ipsum <span> dolor sit amet consectetur adipisicing elit </span> . Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+  </p>
+  
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+  </p>
+
+  <h3>Subtítulo</h3>
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+  </p>
+
 
   <!-- Vinculamos este html con login.js -->
   <script src="../js/login.js"></script>

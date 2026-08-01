@@ -43,3 +43,18 @@ input, select{
 body{
   background-color: var(--color-fondo);
 }
+
+p span{
+  color: red;
+  font-weight: bold;
+}
+
+p, h3{
+  text-align: center;
+  margin: 10px 0;
+  color: var(--color-titulo) !important;
+}
+
+p{
+  color:blueviolet
+}

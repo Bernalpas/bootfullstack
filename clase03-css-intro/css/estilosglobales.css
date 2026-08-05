@@ -3,6 +3,40 @@
 body{
   /* color de fondo - color elegido */
   background-color: rgb(220, 220, 207);
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar{
+  background-color: #1f2937;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+}
+
+.logo{
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.navbar ul{
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a{
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar a:hover{
+  color: #93c5fd;
 }
 
 h2{/* selector de tipo global: todas las etiquetas */

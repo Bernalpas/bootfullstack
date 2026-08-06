@@ -1,5 +1,5 @@
 
-
+/* Reset de CSS */
 *{
     margin: 0;
     padding: 0;
@@ -65,4 +65,41 @@ img{
   width: 600px;
   height: 600px;
   text-align: center;
+}
+
+
+/* Estilos de la Tabla del archivo tablas.html */
+
+tr, td{
+  background-color: rgb(187, 209, 236);
+  font-size: 36px;
+  border: 3px solid black;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+}
+
+a:link{
+  text-decoration: none;
+  font-size: 36px;
+  color: rgb(23, 3, 69);
+}
+
+a:visited{
+  text-decoration: none;
+  font-size: 36px;
+  color: rgb(129, 8, 8);
+}
+
+.tabla:hover{
+  background-color: rgb(227, 14, 14);
+} 
+
+.input:focus{
+  width: 300px;
+  height: 50px;
+  font-size: 36px;
+  border: 3px solid rgb(77, 52, 235);
+  border-radius: 10px;
+  background-color: rgb(202, 228, 97);
 }

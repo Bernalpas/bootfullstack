@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css">
+  <title>Tablas HTML</title>
+</head>
+<body>
+
+    <nav>
+    <ul>
+      <li>
+        <a href="../index.html">Inicio</a>
+      </li>
+      <li>
+        <a href="./tablas.html">Tablas</a>
+      </li>
+    </ul>
+  </nav>
+
+  <h1>Tablas HTML</h1>
+
+  <table class="tabla"><!-- etiqueta de tabla contenedora de los elementos de la tabla -->
+    <caption>Tabla de ejemplo</caption> <!-- titulo de la tabla -->
+    <thead> <!-- titulos del encabezado de la tabla -->
+      <tr><!-- fila de la tabla -->
+        <th>Nombre</th><!-- celda de encabezado -->
+        <th>Apellido</th>
+        <th>Edad</th>
+      </tr>
+    </thead>
+    <tbody> <!-- cuerpo de la tabla -->
+      <tr>
+        <td>Pepe</td>
+        <td>Pérez</td>
+        <td rowspan="2">30</td>
+      </tr>
+      <tr>
+        <td>Juan</td>
+        <td>García</td>
+        <!-- <td>25</td> -->
+      </tr>
+      <tr>
+        <td>María</td>
+        <td>López</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>María</td>
+        <td>López</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>María</td>
+        <td>López</td>
+        <td>28</td>
+      </tr>
+    </tbody>
+    <tfoot> <!-- pie de la tabla -->
+      <tr> 
+        <td colspan="2">Fila combinada</td>
+        <td>5 usuarios</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <form action="">
+    <label for="nombre">Nombre: </label>
+    <input class="input" type="text" name="nombre" id="nombre">
+  </form>
+  
+</body>
+</html>

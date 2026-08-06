@@ -19,9 +19,12 @@ Comandos de Ramas en Git
 7. git push origin nombredelarama
 8. git branch --list
 9. git branch -l
+10. git merge nombredelarama
+11. git branch -D nombredelarama
 
 #####
 Comandos de tareas colaborativas
 #####
 
 8. git pull origin master
+

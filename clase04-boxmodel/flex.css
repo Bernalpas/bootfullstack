@@ -1,0 +1,23 @@
+
+img{
+  width: 250px;
+  height: 200px;
+  /* display: none; */
+  /* display: block; */
+}
+
+/* apuntamos al contenedor padre para que acomode los elementos */
+.gallery{
+  background-color: #a9cdec;
+  display: flex;/* por defecto acomoda los elementos en una fila */
+  flex-direction: column;/* acomoda los elementos en una columna */
+  flex-direction: column-reverse;/* acomoda los elementos en una columna de abajo hacia arriba */
+  flex-direction: row-reverse;/* acomoda los elementos en una fila de derecha a izquierda */
+  flex-direction: row;/* acomoda los elementos en una fila por defecto */
+  flex-wrap: nowrap;/* acomoda los elementos en una sola fila */
+  flex-wrap: wrap-reverse;/* acomoda los elementos en varias filas de abajo hacia arriba */
+  flex-wrap: wrap;/* acomoda los elementos en varias filas */
+  justify-content: center;/* acomoda los elementos en el centro de la fila */
+  justify-content: space-around;/* acomoda los elementos con espacio entre ellos */
+  align-items: flex-end; /* acomoda los elementos al final de la columna */
+}

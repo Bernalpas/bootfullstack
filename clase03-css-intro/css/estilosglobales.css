@@ -4,7 +4,7 @@ body{
   /* color de fondo - color elegido */
   background-color: rgb(220, 220, 207);
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 .navbar{

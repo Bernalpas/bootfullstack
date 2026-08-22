@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap y Ventanas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  </head>
+  <body>
+    
+    <!-- Css -->
+    <style>
+      body{
+        background-color: beige;
+      }
+    </style>
+
+
+    <!-- 3. Podemos escribir js dentro de este tag -->
+    <script>
+      console.log("4. Estmos dentro del archivo html");
+    </script>
+
+
+<h1 class="text-center mt-5">Clase: Ventanas en JavaScript</h1>
+
+    <div class="container mt-5 p-5 d-flex flex-sm-row flex-md-column flex-lg-column-reverse flex-xxl-row-reverse justify-content-around
+    border border-danger-subtle">
+
+      <button 
+        id="ventanaAlert" 
+        type="button" 
+        class="btn bg-danger mb-3"
+        onclick="dameVentanaAlert()">
+        Ventana Alert - Evento onclick
+      </button>
+
+      <button 
+        id="ventanaPrompt" 
+        type="button" 
+        class="btn bg-primary mb-3"
+        ondblclick="dameVentanaPrompt()">
+        Ventana Prompt - Evento ondblclick
+      </button>
+
+      <button 
+        id="ventanaConfirm" 
+        type="button" 
+        class="btn bg-success mb-3"
+        onmouseover="dameVentanaConfirm()">
+        Ventana Confirm - Evento onmouseover
+      </button>
+      
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- 1. Vinculamos un archivo js -->
+    <script src="./ventanas.js"></script>
+
+    <!-- 2. Vinculamos nuestro archico JS -->
+    <script src="./variables.js"></script>
+  </body>
+</html>

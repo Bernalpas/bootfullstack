@@ -97,3 +97,8 @@ input[type="submit"]:active {
     padding: 24px 20px;
   }
 }
+
+/* ejemplo de clases en Boootstrap */
+.text-center{
+  text-align: center;
+}

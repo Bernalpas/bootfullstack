@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin de Productos</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --panel: #ffffff;
+        --card: #eef4ff;
+        --primary: #2f6fed;
+        --primary-dark: #214eb3;
+        --success: #28a745;
+        --warning: #f59e0b;
+        --danger: #dc3545;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --border: #dfe7f5;
+        --shadow: 0 10px 25px rgba(31, 41, 55, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #edf4ff 0%, #f8fafc 100%);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px 40px;
+      }
+
+      .topbar {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        padding: 18px 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 22px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      .brand-badge {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--primary), #70a3ff);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+      }
+
+      .user-pill {
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: #edf3ff;
+        color: var(--primary-dark);
+        font-weight: 600;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(180px, 1fr));
+        gap: 18px;
+        margin-bottom: 22px;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .stat {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .stat-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+      }
+
+      .stat:nth-child(1) .stat-icon {
+        background: #e7f0ff;
+        color: var(--primary);
+      }
+
+      .stat:nth-child(2) .stat-icon {
+        background: #eafaf1;
+        color: var(--success);
+      }
+
+      .stat:nth-child(3) .stat-icon {
+        background: #fff5df;
+        color: var(--warning);
+      }
+
+      .stat:nth-child(4) .stat-icon {
+        background: #ffeaf0;
+        color: var(--danger);
+      }
+
+      .stat-title {
+        color: var(--muted);
+        font-size: 0.82rem;
+        margin-bottom: 6px;
+      }
+
+      .stat-value {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 22px;
+      }
+
+      .form-panel {
+        padding: 22px;
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        font-size: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 16px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        font: inherit;
+      }
+
+      input,
+      select,
+      textarea {
+        background: #fff;
+        padding: 11px 12px;
+        color: var(--text);
+      }
+
+      textarea {
+        min-height: 90px;
+        resize: vertical;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn {
+        padding: 12px 16px;
+        cursor: pointer;
+        border: none;
+        font-weight: 700;
+        transition: 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+      }
+
+      .btn-secondary {
+        background: #edf3ff;
+        color: var(--primary-dark);
+      }
+
+      .btn-danger {
+        background: #ffecef;
+        color: var(--danger);
+      }
+
+      .list-panel {
+        padding: 22px;
+      }
+
+      .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .search {
+        max-width: 240px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .product-cell {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .product-thumb {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #dfeaff, #f2f7ff);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      .product-name {
+        font-weight: 700;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .badge.active {
+        background: #eafaf1;
+        color: var(--success);
+      }
+
+      .badge.inactive {
+        background: #fff4e9;
+        color: var(--warning);
+      }
+
+      .price {
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .table-actions {
+        display: flex;
+        gap: 8px;
+      }
+
+      .small-btn {
+        border: none;
+        border-radius: 8px;
+        padding: 8px 10px;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .edit {
+        background: #eaf3ff;
+        color: var(--primary);
+      }
+
+      .delete {
+        background: #ffecef;
+        color: var(--danger);
+      }
+
+      @media (max-width: 900px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, minmax(150px, 1fr));
+        }
+      }
+
+      @media (max-width: 560px) {
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .toolbar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .search {
+          max-width: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-badge">P</div>
+          <span>Panel de administración</span>
+        </div>
+        <div class="user-pill">Admin · Usuario</div>
+      </header>
+
+      <section class="stats">
+        <div class="card stat">
+          <div>
+            <div class="stat-title">Productos</div>
+            <div class="stat-value" id="totalProducts">0</div>
+          </div>
+          <div class="stat-icon">📦</div>
+        </div>
+
+        <div class="card stat">
+          <div>
+            <div class="stat-title">Activos</div>
+            <div class="stat-value" id="activeProducts">0</div>
+          </div>
+          <div class="stat-icon">✅</div>
+        </div>
+
+        <div class="card stat">
+          <div>
+            <div class="stat-title">Stock</div>
+            <div class="stat-value" id="stockProducts">0</div>
+          </div>
+          <div class="stat-icon">📊</div>
+        </div>
+
+        <div class="card stat">
+          <div>
+            <div class="stat-title">Sin stock</div>
+            <div class="stat-value" id="outOfStock">0</div>
+          </div>
+          <div class="stat-icon">⚠️</div>
+        </div>
+      </section>
+
+      <main class="content">
+        <section class="card form-panel">
+          <h2 id="formTitle">Agregar producto</h2>
+
+          <form id="productForm">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" placeholder="Ej: Mouse gamer" required />
+            </div>
+
+            <div class="form-group">
+              <label for="category">Categoría</label>
+              <select id="category" name="category" required>
+                <option value="">Seleccionar</option>
+                <option value="Tecnología">Tecnología</option>
+                <option value="Hogar">Hogar</option>
+                <option value="Ropa">Ropa</option>
+                <option value="Accesorios">Accesorios</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="price">Precio</label>
+              <input id="price" name="price" type="number" min="0" step="0.01" placeholder="299.99" required />
+            </div>
+
+            <div class="form-group">
+              <label for="stock">Stock</label>
+              <input id="stock" name="stock" type="number" min="0" placeholder="25" required />
+            </div>
+
+            <div class="form-group">
+              <label for="status">Estado</label>
+              <select id="status" name="status">
+                <option value="Activo">Activo</option>
+                <option value="Inactivo">Inactivo</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Descripción</label>
+              <textarea id="description" name="description" placeholder="Descripción del producto"></textarea>
+            </div>
+
+            <div class="actions">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" id="cancelEdit">Cancelar</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="card list-panel">
+          <div class="toolbar">
+            <h2>Lista de productos</h2>
+            <input class="search" id="searchInput" type="text" placeholder="Buscar producto..." />
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="productTableBody"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const initialProducts = [
+        {
+          id: 1,
+          name: 'Mouse Gamer Pro',
+          category: 'Tecnología',
+          price: 89.99,
+          stock: 18,
+          status: 'Activo',
+          description: 'Mouse ergonómico con sensor preciso y RGB.'
+        },
+        {
+          id: 2,
+          name: 'Silla Ergómica',
+          category: 'Hogar',
+          price: 240.0,
+          stock: 6,
+          status: 'Activo',
+          description: 'Ideal para trabajo prolongado con respaldo lumbar.'
+        },
+        {
+          id: 3,
+          name: 'Camiseta Básica',
+          category: 'Ropa',
+          price: 29.5,
+          stock: 0,
+          status: 'Inactivo',
+          description: 'Algodón premium, corte clásico.'
+        },
+        {
+          id: 4,
+          name: 'Auriculares Bluetooth',
+          category: 'Accesorios',
+          price: 149.9,
+          stock: 12,
+          status: 'Activo',
+          description: 'Sonido envolvente y batería de larga duración.'
+        }
+      ];
+
+      let products = [...initialProducts];
+      let editingId = null;
+
+      const productForm = document.getElementById('productForm');
+      const productTableBody = document.getElementById('productTableBody');
+      const formTitle = document.getElementById('formTitle');
+      const cancelEditBtn = document.getElementById('cancelEdit');
+      const searchInput = document.getElementById('searchInput');
+
+      function formatPrice(value) {
+        return new Intl.NumberFormat('es-AR', {
+          style: 'currency',
+          currency: 'ARS'
+        }).format(value);
+      }
+
+      function renderTable() {
+        const query = searchInput.value.trim().toLowerCase();
+        const filteredProducts = products.filter((product) =>
+          product.name.toLowerCase().includes(query) ||
+          product.category.toLowerCase().includes(query)
+        );
+
+        productTableBody.innerHTML = filteredProducts
+          .map(
+            (product) => `
+              <tr>
+                <td>
+                  <div class="product-cell">
+                    <div class="product-thumb">${product.name.charAt(0).toUpperCase()}</div>
+                    <div>
+                      <div class="product-name">${product.name}</div>
+                    </div>
+                  </div>
+                </td>
+                <td>${product.category}</td>
+                <td>${product.stock}</td>
+                <td><span class="price">${formatPrice(product.price)}</span></td>
+                <td>
+                  <span class="badge ${product.status === 'Activo' ? 'active' : 'inactive'}">
+                    ${product.status}
+                  </span>
+                </td>
+                <td>
+                  <div class="table-actions">
+                    <button class="small-btn edit" data-action="edit" data-id="${product.id}">Editar</button>
+                    <button class="small-btn delete" data-action="delete" data-id="${product.id}">Eliminar</button>
+                  </div>
+                </td>
+              </tr>
+            `
+          )
+          .join('');
+
+        updateStats();
+      }
+
+      function updateStats() {
+        document.getElementById('totalProducts').textContent = products.length;
+        document.getElementById('activeProducts').textContent = products.filter((p) => p.status === 'Activo').length;
+        document.getElementById('stockProducts').textContent = products.reduce((sum, p) => sum + p.stock, 0);
+        document.getElementById('outOfStock').textContent = products.filter((p) => p.stock === 0).length;
+      }
+
+      function resetForm() {
+        productForm.reset();
+        editingId = null;
+        formTitle.textContent = 'Agregar producto';
+        cancelEditBtn.style.display = 'none';
+      }
+
+      productForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(productForm);
+        const product = {
+          id: editingId ?? Date.now(),
+          name: formData.get('name').toString().trim(),
+          category: formData.get('category').toString(),
+          price: Number(formData.get('price')),
+          stock: Number(formData.get('stock')),
+          status: formData.get('status').toString(),
+          description: formData.get('description').toString().trim()
+        };
+
+        if (!product.name || !product.category || product.price < 0 || product.stock < 0) {
+          alert('Completa los campos correctamente.');
+          return;
+        }
+
+        if (editingId !== null) {
+          products = products.map((item) => (item.id === editingId ? product : item));
+        } else {
+          products.unshift(product);
+        }
+
+        resetForm();
+        renderTable();
+      });
+
+      productTableBody.addEventListener('click', (event) => {
+        const button = event.target.closest('button');
+        if (!button) return;
+
+        const { action, id } = button.dataset;
+        const numericId = Number(id);
+
+        if (action === 'delete') {
+          products = products.filter((product) => product.id !== numericId);
+          renderTable();
+        }
+
+        if (action === 'edit') {
+          const product = products.find((item) => item.id === numericId);
+          if (!product) return;
+
+          editingId = product.id;
+          formTitle.textContent = 'Editar producto';
+          cancelEditBtn.style.display = 'inline-block';
+
+          document.getElementById('name').value = product.name;
+          document.getElementById('category').value = product.category;
+          document.getElementById('price').value = product.price;
+          document.getElementById('stock').value = product.stock;
+          document.getElementById('status').value = product.status;
+          document.getElementById('description').value = product.description;
+        }
+      });
+
+      cancelEditBtn.addEventListener('click', resetForm);
+      searchInput.addEventListener('input', renderTable);
+
+      cancelEditBtn.style.display = 'none';
+      renderTable();
+    </script>
+  </body>
+</html>

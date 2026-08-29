@@ -97,6 +97,17 @@ let persona = ["Pepe", "Buenos Aires", 30, "Programación", 123156465]
 console.log("La persona se llama " + persona[0] + " y su DNI es " + persona[4]);
 
 
+// Tipos de info en la consola
+// console.clear()
+console.log("Imprime un dato");
+console.error("No se encontraron datos en la Database");
+console.table(persona);
+console.warn("Cuidado: no olvidar anular password")
+
+
+
+
+
 
 
 

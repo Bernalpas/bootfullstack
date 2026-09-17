@@ -111,6 +111,7 @@ function eliminarPrimeroUsuario() {
 // Otra forma de trabajar con el addEventListener
 // imprimir los usuarios en la lista desordenada
 let listaUsuariosText = document.getElementById("listaUsuariosText");
+
 function imprimirParrafo() {
 
   // 1. Escribimos un dato con innerText
@@ -131,3 +132,43 @@ const btnImprimirParrafo = document.getElementById("btnImprimirParrafo");
 btnImprimirParrafo.addEventListener("click", function(){
   imprimirParrafo();
 })
+
+
+// Método querySelector para capturar el elemento con el id listaUsuarios
+//1. Capturo el elemento con el id listaUsuarios - lista ordenada
+const listaUsuarios = document.querySelector("#listaUsuarios");
+
+//2. Creo un elemnto li
+let itemListUno = document.createElement("li");
+
+//3. Agrego un usuario al itemlist
+itemListUno.innerText = "Pepe Perez - Desde el DOM de JS";
+
+//4. Agrego el itemlist a la lista
+listaUsuarios.appendChild(itemListUno);
+
+
+// Footer con DOM de JS
+//1. Capturamos el footer con el querySelector
+const footerJS = document.querySelector("#footerJS");
+
+//2. Crear los elementos que irán en el footer
+let ancla = document.createElement("a");
+
+//3. Agregamos el atributo al ancla
+ancla.href = "https://www.educacionit.com";
+ancla.target = "_blank";
+
+//4. Agregamos el texto al ancla
+ancla.innerText = "Ir a EducaciónIT";
+
+//5. Agregamos estilos al ancla
+ancla.style.color = "red";
+ancla.style.fontFamily = "Arial, Verdana";
+ancla.style.fontSize = "20px";
+ancla.style.textDecoration = "none";
+ancla.style.fontStyle = "italic";
+
+//5. Le agregamos el ancla al footer
+footerJS.appendChild(ancla);
+

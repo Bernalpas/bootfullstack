@@ -19,8 +19,8 @@ class Auto{
   }
 
   //2. Métodos: son funciones que realiza la clase y que lo pueden usar sólo los objetos de la clase
-  avanzar(){
-    console.log("El auto se mueve para adelante")
+  avanzar(velocidad){
+    console.log("El auto se mueve para adelante a " + velocidad + " km/h")
   }
 
   frenar(){
@@ -34,7 +34,7 @@ class Auto{
 let miAuto = new Auto("rojo", 5, "Audi", 200000)
 
 // usamos el método de la clase Auto
-miAuto.avanzar();
+miAuto.avanzar(80);
 console.log("#######################################")
 miAuto.frenar();
 console.log("#######################################")

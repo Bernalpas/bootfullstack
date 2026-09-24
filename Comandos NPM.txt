@@ -1,0 +1,18 @@
+
+
+Comandos para la creación de una app con NODE.JS
+
+1. Inicializar un proyecto de Node. Se ejecuta una sola vez y tiene el propósito de configurar la app y crear archivo.
+
+    npm init  => pregunta paso a paso
+
+    npm init --yes => crea el archivo sin preguntar paso a paso
+
+    npm init -y => igual que el anterior
+
+2. Creamos el archivo principal con el nombre que tiene el archivo de configuración llamado:
+
+    index.js
+
+3. Cada vez que necesite un módulo nativo o instalado en Node, necesito crear una variable para utilizarlo.
+

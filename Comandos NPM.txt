@@ -16,3 +16,11 @@ Comandos para la creación de una app con NODE.JS
 
 3. Cada vez que necesite un módulo nativo o instalado en Node, necesito crear una variable para utilizarlo.
 
+    const os = require("node:os")
+
+4. Si necesitamos un módulo externo, que no lo tiene Node, lo buscamos en la biblioteca de NPM y lo instalamos: Ej. Express (para crear back)
+
+    npm install express => comando completo
+
+    npm i express       => el atajo para la instalación
+

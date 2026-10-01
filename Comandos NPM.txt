@@ -24,3 +24,11 @@ Comandos para la creación de una app con NODE.JS
 
     npm i express       => el atajo para la instalación
 
+5. Para ahorrar espacio en la memoria de nuestros proyectos, podemos instalar algunos módulos de forma global, entre ellos a nodemon, en la consola del user:
+
+    npm i -g nodemon
+
+    npm install --global typescript
+
+
+

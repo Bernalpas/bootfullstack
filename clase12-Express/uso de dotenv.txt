@@ -1,0 +1,30 @@
+
+1. Instalamos el módulo 
+
+  npm i dotenv --save
+
+  npm install dotenv
+
+  npm i dotenv
+
+2. Creamos un archivo .env, en la raíz del proyecto o el root
+
+3. Este archivo sirve para ocultar datos privados de la aplicación como contraseñas.
+
+4. Creamos las variables privadas en el archivo .env
+
+  PORT=8080
+
+5. Importamos la librería en el el index.js
+
+  const dotenv = require("dotenv")
+
+6. Ejecutamos la configuración del la librería
+
+  dotenv.config()
+
+7. Importamos las variables privadas desde el archivo .env
+
+  const PORT = process.env.PORT
+  const GOOGLE = process.env.GOOGLE_API_KEY
+

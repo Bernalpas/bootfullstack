@@ -14,6 +14,7 @@
 4. Creamos las variables privadas en el archivo .env
 
   PORT=8080
+  GOOGLE_API_KEY=321321321321dfgsfd
 
 5. Importamos la librería en el el index.js
 

@@ -21,8 +21,15 @@ const dotenv = require('dotenv');
 // utilizamos la librería dotenv
 dotenv.config();
 
+// ver los procesos de node
+console.log('###############################################');
+//console.log(process);
+console.log(process.env.GOOGLE_API_KEY);
+console.log(process.env.PORT);
+console.log('###############################################');
+
 // Creamos una variable para el puerto en el que se ejecutará el servidor
-const PORT = 9000;
+const PORT = process.env.PORT; //8080
 
 // Generamos una ruta que atienda al pedido del cliente
 // Método GET: solicita información del servidor
@@ -96,7 +103,6 @@ app.get('/descarga', (req, res)=>{
 app.get('/page', (req, res)=>{
   res.sendFile(__dirname + '/pages/index.html');
 });
-
 
 // Ejecutamos el servidor en el puerto especificado
 // 1. Necesita el puerto

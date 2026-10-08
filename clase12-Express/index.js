@@ -94,9 +94,18 @@ app.get('/data', (req, res)=>{
     res.json(datos)
 });
 
-// descarga de archivos
-app.get('/descarga', (req, res)=>{
-  res.download(__dirname + '/archivos/bootcamp.pdf');
+// Quiero enviar otra respuesta con la ruta /data
+// nunca podemos enviar dos respuestas a una misma petición del cliente
+// siempre enviará el primer registro
+app.get('/data', (req, res)=>{
+  res.json({
+    nombre: "heladera",
+    precio: 1000000,
+    cantidad: 50,
+    descripcion: "televisor 55 pulgadas con pantalla LED 4K",
+    imagen: "https://armoto.vtexassets.com/arquivos/ids/165548-1200-auto?v=638463753607000000&width=1200&height=auto&aspect=true",
+    envio: "Gratuito"
+    });
 });
 
 // enviamos un archivo

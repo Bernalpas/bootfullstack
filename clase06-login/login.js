@@ -17,11 +17,18 @@ function Login() {
   console.log(email);
   console.log(password);
 
+  let frutas = ["manzana", "banana", "pera", "kiwi", "naranja"];
+
+  console.log(frutas[1]);
+
   // 2. Creamos un objeto con los datos del user
   let user = {
-    email: email,
-    password: password
+    email,
+    password
   }
+
+  console.log(user.email);
+  console.log(user.password);
 
   // 3. Imprimo en consola el objeto del user
   console.log(user);
@@ -34,10 +41,15 @@ function Login() {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(user)
-  }).then(res => res.json()).then(data => {
-    console.log(data);
-  })
-
+  }).then(response => response.text())
+    .then(data => {
+      console.log(data);
+      alert(data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      window.location.href = "./error.html"
+    });
 
 
   //3. Evaluamos el acceso con un condicional / comentado para ejercicio de back

@@ -30,5 +30,17 @@ Comandos para la creación de una app con NODE.JS
 
     npm install --global typescript
 
+6. Para instalar módulos en modo desarrollo ejecutamos el comando:
+
+    npm i -D nodemon 
+
+7. Para instalar múltiples módulos ejecutamos el comando, separados por un espacio:
+
+    npm i express dotenv mongoose path cors
+
+8. Para instalar un módulo con una version determinada ejecutamos el comando:
+
+    npm i express@4.19.5
+
 
 

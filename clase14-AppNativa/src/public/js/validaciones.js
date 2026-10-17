@@ -116,7 +116,7 @@
       },
       photo: {
         label: "Foto",
-        required: true,
+        required: false,
         requiredMessage: "Seleccioná una imagen del producto.",
         regex: RE.imageFile,
         message: "El archivo debe ser una imagen con extensión .jpg, .jpeg, .png, .gif, .webp o .svg"

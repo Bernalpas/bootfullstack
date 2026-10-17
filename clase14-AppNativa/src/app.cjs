@@ -14,6 +14,13 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 
+// Importamos las Rutas del Backend
+const userRoute = require('./routes/userRoute.cjs');
+
+//4. Agregamos las Rutas al servidor
+app.use('/user', userRoute);
+app.use('/product', require('./routes/productRoute.cjs'));
+
 //4. Agregamos el path del directorio public
 app.use(express.static(path.join(__dirname, './public')));
 

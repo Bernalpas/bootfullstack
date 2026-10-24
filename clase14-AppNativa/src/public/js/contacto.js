@@ -24,8 +24,10 @@ formulario.addEventListener('submit', (event) => {
     subject: subjectUser
   };
 
+  console.log(dataUser);
+
   // Enviamos los datos al backend
-  fetch('http://localhost:8080/user/contacto', {
+fetch('http://localhost:8080/user/contacto', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

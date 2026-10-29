@@ -4,13 +4,19 @@
 const express = require('express');
 const router = express.Router();
 
+// Importamos el model Product
+const Product = require('../models/productCollection.cjs');
+
 // 2. Rutas
 
 // Ruta para crear un producto
 router.post('/create', (req, res)=>{
 
   console.log(req.body);
-  res.send(req.body);
+
+  Product.create(req.body);
+
+  res.send("Producto creado con éxito");
 
 });
 

@@ -9,9 +9,49 @@ const productSchema = new mongoose.Schema({
     required: true
   },
   price: {
-    type: Double,
+    type: Number,
     required: true
   },
+  stock: {
+    type: Number,
+    required: true
+  },
+  brand: {
+    type: String,
+    required: true
+  },
+  category:{
+    type: String,
+    required: true
+  },
+  sortDesc: {
+    type: String,
+    required: true
+  },
+  longDesc: {
+    type: String,
+    required: true
+  },
+  edadMinima: {
+    type: Number,
+    required: true
+  },
+  edadMaxima: {
+    type: Number,
+    required: true
+  },
+  envio: {
+    type: Boolean,
+    default: false
+  },
+  imagen: {
+    type: String,
+    required: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 // Creamos la colección Product

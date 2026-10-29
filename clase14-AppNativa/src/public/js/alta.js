@@ -16,6 +16,11 @@ productForm.addEventListener('submit', (e)=>{
   const brandProduct = product.get('brand');
   const categoryProduct = product.get('category');
   const sortDescProduct = product.get('sortDesc');
+  const longDescProduct = product.get('longDesc');
+  const edadMinimaProduct = product.get('edadMinima');
+  const edadMaximaProduct = product.get('edadMaxima');
+  const envioProduct = product.get('envio');
+  const imagenProduct = product.get('imagen');
 
   // Creamos un objeto con los datos del producto
   let dataproduct = {
@@ -24,7 +29,12 @@ productForm.addEventListener('submit', (e)=>{
     stock: stockProduct,
     brand: brandProduct,
     category: categoryProduct,
-    sortDesc: sortDescProduct
+    sortDesc: sortDescProduct,
+    longDesc: longDescProduct,
+    edadMinima: edadMinimaProduct,
+    edadMaxima: edadMaximaProduct,
+    envio: envioProduct,
+    imagen: imagenProduct,
   }
 
   // Enviamos los datos al backend

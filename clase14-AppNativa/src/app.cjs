@@ -16,10 +16,12 @@ app.use(express.json());
 
 // Importamos las Rutas del Backend
 const userRoute = require('./routes/userRoute.cjs');
+const carritoRoute = require('./routes/carritoRoute.cjs');
 
 //4. Agregamos las Rutas al servidor
 app.use('/user', userRoute);
 app.use('/product', require('./routes/productRoute.cjs'));
+app.use('/carrito', carritoRoute);
 
 //4. Agregamos el path del directorio public
 app.use(express.static(path.join(__dirname, './public')));

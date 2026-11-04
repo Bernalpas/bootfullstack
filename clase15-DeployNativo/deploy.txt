@@ -1,0 +1,10 @@
+
+1. Crear un nuevo Repo para el Deploy.
+
+2. Crear los archivos .env, .env.example, .gitignore
+
+3. Agregar en el script de package.json:
+
+    "start": "node src/server.cjs"
+
+4. No olvidar agregar las variables de entorno en el servidor

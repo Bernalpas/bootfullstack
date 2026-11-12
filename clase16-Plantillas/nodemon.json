@@ -1,0 +1,10 @@
+
+
+{
+  "watch": ["src", "views", "public"],
+  "ext": "html, css, js, cjs, mjs, hbs, json",
+  "ignore": [
+    "node_modules"
+  ],
+  "exec": "node src/server.mjs"
+}

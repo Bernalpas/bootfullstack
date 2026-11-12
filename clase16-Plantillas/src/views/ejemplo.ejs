@@ -1,0 +1,12 @@
+
+<% extends "layout" %>
+  <h1>Welcome to Express Handlebars</h1>
+  <p>This is a simple example of using Express Handlebars to render dynamic content.</p>
+
+  <% if (user) { %>
+    <p>Hello, <%= user.name %>!</p>
+  <% } else { %>
+    <p>Please log in to view this page.</p>
+  <% } %>
+
+  <% endblock %>

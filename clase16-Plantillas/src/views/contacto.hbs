@@ -1,0 +1,166 @@
+<section class="bg-light py-5">
+  <div class="container">
+
+    {{!-- Encabezado Principal --}}
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-8">
+        <span class="badge bg-danger text-uppercase px-3 py-2 mb-2">Hablemos</span>
+        <h1 class="display-5 fw-bold text-danger">
+          {{#if titulo}}{{titulo}}{{else}}Contacto - Pizzería Bella Napoli{{/if}}
+        </h1>
+        <p class="lead text-muted">
+          ¿Querés hacer una reserva, consultar por eventos o dejarnos tu comentario? Escribinos y te respondemos a la brevedad.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-stretch">
+
+      {{!-- Columna Izquierda: Formulario de Contacto --}}
+      <div class="col-lg-7">
+        <div class="card h-100 border-0 border-top border-danger border-4 shadow-sm rounded-3">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="h4 fw-bold text-dark mb-4">Envianos tu mensaje</h2>
+
+            {{!-- Alertas dinámicas de Handlebars --}}
+            {{#if success}}
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{success}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+              </div>
+            {{/if}}
+
+            {{#if error}}
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{error}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+              </div>
+            {{/if}}
+
+            <form action="{{#if actionUrl}}{{actionUrl}}{{else}}/contacto{{/if}}" method="POST">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="nombre" class="form-label fw-semibold text-dark">Nombre completo</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Tu nombre"
+                    value="{{formData.nombre}}"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email" class="form-label fw-semibold text-dark">Correo electrónico</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="ejemplo@correo.com"
+                    value="{{formData.email}}"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="telefono" class="form-label fw-semibold text-dark">Teléfono / WhatsApp</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="+54 11 1234-5678"
+                    value="{{formData.telefono}}"
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="motivo" class="form-label fw-semibold text-dark">Motivo de consulta</label>
+                  <select class="form-select" id="motivo" name="motivo" required>
+                    <option value="" disabled {{#unless formData.motivo}}selected{{/unless}}>Seleccioná una opción...</option>
+                    <option value="reserva">Reserva de mesa</option>
+                    <option value="pedido">Consulta sobre pedidos</option>
+                    <option value="evento">Eventos y catering</option>
+                    <option value="sugerencia">Sugerencias o comentarios</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label for="mensaje" class="form-label fw-semibold text-dark">Mensaje</label>
+                  <textarea
+                    class="form-control"
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    placeholder="Contanos en qué podemos ayudarte..."
+                    required
+                  >{{formData.mensaje}}</textarea>
+                </div>
+
+                <div class="col-12 d-flex gap-2 pt-2">
+                  <button type="submit" class="btn btn-danger fw-semibold px-4 flex-grow-1">
+                    Enviar mensaje
+                  </button>
+                  <button type="reset" class="btn btn-outline-secondary fw-semibold px-4">
+                    Borrar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {{!-- Columna Derecha: Datos del Local y Horarios --}}
+      <div class="col-lg-5">
+        <div class="card h-100 border-0 border-top border-success border-4 shadow-sm rounded-3">
+          <div class="card-body p-4 p-md-5 d-flex flex-column justify-content-between">
+            <div>
+              <h2 class="h4 fw-bold text-dark mb-4">Nuestro Local</h2>
+
+              <ul class="list-group list-group-flush mb-4">
+                <li class="list-group-item px-0 py-3">
+                  <span class="fw-bold text-danger d-block">📍 Dirección</span>
+                  <span class="text-secondary">
+                      Av. Corrientes 1450, Ciudad Autónoma de Buenos Aires  
+                  </span>
+                </li>
+                <li class="list-group-item px-0 py-3">
+                  <span class="fw-bold text-danger d-block">📞 Teléfono & Pedidos</span>
+                  <span class="text-secondary">
+                      (011) 4321-9876 / WhatsApp: +54 9 11 5555-0192
+                  </span>
+                </li>
+                <li class="list-group-item px-0 py-3">
+                  <span class="fw-bold text-danger d-block">✉️ Correo Electrónico</span>
+                  <span class="text-secondary">
+                      hola@bellanapoli.com.ar
+                  </span>
+                </li>
+                <li class="list-group-item px-0 py-3">
+                  <span class="fw-bold text-success d-block">🕒 Horarios de Atención</span>
+                  <span class="text-secondary d-block">Martes a Jueves: 19:30 a 23:30 hs</span>
+                  <span class="text-secondary d-block">Viernes a Domingo: 12:00 a 15:30 hs y 19:30 a 00:30 hs</span>
+                  <span class="badge bg-secondary mt-1">Lunes cerrado por descanso</span>
+                </li>
+              </ul>
+            </div>
+
+            {{!-- Mapa embebido responsivo con utilidad ratio de Bootstrap --}}
+            <div class="ratio ratio-16x9 rounded overflow-hidden border">
+              <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-58.3910%2C-34.6060%2C-58.3830%2C-34.6015&layer=mapnik"
+                title="Ubicación de Pizzería Bella Napoli"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

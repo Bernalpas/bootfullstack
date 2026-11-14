@@ -11,6 +11,8 @@ import fileURLToPath from "node:url" // sólo con versiones anteriores a 20.11
 
 // Importamos las rutas de las páginas
 import pagesRouter from "./routes/pagesRouters.mjs"
+// Importamos las rutas de los usuarios
+import usersRouter from "./routes/usersRouters.mjs"
 
 // Importamos el middleware de rateLimit
 import apiLimiter from "./middlewares/rateLimit.mjs"
@@ -72,6 +74,7 @@ app.set("views", path.join(__dirname, "views"))
 // Fase 4: Rutas
 //===========================
 app.use("/", pagesRouter)
+app.use("/api/users", usersRouter)
 
 //===========================
 // Fase 5: Manejo de Errores

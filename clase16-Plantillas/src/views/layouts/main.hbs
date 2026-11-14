@@ -9,7 +9,12 @@
   {{!-- Si quiero utilizar CSS Nativo desde public --}}
   <link rel="stylesheet" href="/css/style.css">
 
-  <title>Main - Hbs</title>
+  {{!-- Inyectamos los estilos dinamicos según los diseños personalizados de cada página --}}
+
+  <link rel="stylesheet" href="/css/{{customStyle}}.css">
+
+{{!-- inyectamos una variable para el título y lo hacemos dinámico--}}
+  <title>{{title}}</title>
 </head>
 <body>
 

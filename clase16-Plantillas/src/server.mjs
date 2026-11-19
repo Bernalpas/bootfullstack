@@ -13,7 +13,7 @@ const DB_LOCAL = process.env.DB_LOCAL;
 // Conexión a la base de datos remota/servidor
 const DB_ATLAS_URL = process.env.DB_ATLAS_URL;
 
-connectDB(DB_LOCAL)
+connectDB(DB_ATLAS_URL)
 
 
 app.listen(PORT, () => {

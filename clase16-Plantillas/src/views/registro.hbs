@@ -6,8 +6,23 @@
       <p>Creá tu cuenta para realizar pedidos y acceder a promociones</p>
     </div>
 
+    {{!-- Bloque para array de errores devuelto por express-validator (errors.array()) --}}
+    {{#if errors}}
+      <div class="alert-error" role="alert">
+        {{#each errors}}
+          <div>{{this.msg}}</div>
+        {{/each}}
+      </div>
+    {{/if}}
 
-    <form action="" method="" class="login-form">
+    {{!-- Bloque opcional por si enviás un único mensaje de error (ej. email ya registrado) --}}
+    {{#if error}}
+      <div class="alert-error" role="alert">
+        {{error}}
+      </div>
+    {{/if}}
+
+    <form action="/api/users/register" method="POST" class="login-form">
       <div class="form-group">
         <label for="nombre">Nombre completo</label>
         <input
@@ -15,6 +30,9 @@
           id="nombre"
           name="nombre"
           placeholder="Ingresá tu nombre"
+          value="{{nombre}}"
+          minlength="3"
+          maxlength="30"
           required
           autocomplete="name"
         />
@@ -27,6 +45,7 @@
           id="email"
           name="email"
           placeholder="ejemplo@bellanapoli.com"
+          value="{{email}}"
           required
           autocomplete="email"
         />
@@ -39,6 +58,8 @@
           id="password"
           name="password"
           placeholder="••••••••"
+          minlength="6"
+          maxlength="12"
           required
           autocomplete="new-password"
         />

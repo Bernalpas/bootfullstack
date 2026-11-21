@@ -5,12 +5,15 @@ const router = express.Router()
 // importamos el validator
 import { check } from "express-validator"
 
-import { registerUser } from "../controllers/usersControllers.mjs";
+import { 
+  registerUser, 
+  loginUser,
+} from "../controllers/usersControllers.mjs";
 
 // es ruta responde a /api/users
 
 
-
+// registro de usuario
 router.post(
   "/register", //ruta
   [
@@ -19,6 +22,16 @@ router.post(
     check("password").isLength({ min: 6, max: 12 }).isAlphanumeric().withMessage("La contraseña debe tener al menos 6 caracteres y alfanumérico"),
   ], //validaciones
   registerUser //controlador
+)
+
+// login de usuario
+router.post(
+  "/login", 
+  [
+    check("email").isEmail().withMessage("El email debe ser válido"),
+    check("password").isLength({ min: 6, max: 12 }).isAlphanumeric().withMessage("La contraseña debe tener al menos 6 caracteres y alfanumérico"),
+], 
+loginUser
 )
 
 

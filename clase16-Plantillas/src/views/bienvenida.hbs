@@ -1,0 +1,34 @@
+<section class="login-section">
+  <div class="login-card">
+    <div class="login-header">
+      <div class="brand-badge">🍕</div>
+      <h1>
+        {{#if nombre}}
+          ¡Bienvenido/a, {{nombre}}!
+        {{else}}
+          ¡Bienvenido/a de nuevo!
+        {{/if}}
+      </h1>
+      <p>Nos alegra tenerte otra vez en <strong>Pizzería Bella Napoli</strong></p>
+    </div>
+
+    <div class="login-header">
+      <p>
+        {{#if email}}
+          Iniciaste sesión como <strong>{{email}}</strong>. Ya podés explorar nuestro menú artesanal, hacer tu pedido o aprovechar tus promociones exclusivas.
+        {{else}}
+          Tu sesión está activa. Ya podés explorar nuestro menú artesanal, hacer tu pedido o aprovechar tus promociones exclusivas.
+        {{/if}}
+      </p>
+    </div>
+
+    <div class="form-actions">
+      <a href="{{#if menuUrl}}{{menuUrl}}{{else}}/productos{{/if}}" class="btn btn-primary" style="text-align: center; text-decoration: none;">
+        Ver el menú
+      </a>
+      <a href="{{#if logoutUrl}}{{logoutUrl}}{{else}}/logout{{/if}}" class="btn btn-secondary" style="text-align: center; text-decoration: none;">
+        Cerrar sesión
+      </a>
+    </div>
+  </div>
+</section>

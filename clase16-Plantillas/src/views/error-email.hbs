@@ -1,0 +1,30 @@
+<section class="login-section">
+  <div class="login-card">
+    <div class="login-header">
+      <div class="brand-badge">⚠️</div>
+      <h1>Correo ya registrado</h1>
+      <p>No pudimos completar el registro en <strong>Pizzería Bella Napoli</strong></p>
+    </div>
+
+    <div class="alert-error" role="alert">
+      {{#if mensaje}}
+        {{mensaje}}
+      {{else}}
+        El email {{#if email}}<strong>{{email}}</strong>{{/if}} ya existe en nuestro sistema.
+      {{/if}}
+    </div>
+
+    <div class="login-header">
+      <p>Si ya tenés una cuenta creada con este correo, podés iniciar sesión directamente o intentar registrarte con otro email.</p>
+    </div>
+
+    <div class="form-actions">
+      <a href="{{#if loginUrl}}{{loginUrl}}{{else}}/login{{/if}}" class="btn btn-primary" style="text-align: center; text-decoration: none;">
+        Iniciar sesión
+      </a>
+      <a href="{{#if registerUrl}}{{registerUrl}}{{else}}/registro{{/if}}" class="btn btn-secondary" style="text-align: center; text-decoration: none;">
+        Intentar de nuevo
+      </a>
+    </div>
+  </div>
+</section>

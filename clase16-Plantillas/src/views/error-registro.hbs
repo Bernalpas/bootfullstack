@@ -1,0 +1,30 @@
+<section class="login-section">
+  <div class="login-card">
+    <div class="login-header">
+      <div class="brand-badge">🛠️</div>
+      <h1>Error en el servidor</h1>
+      <p>No pudimos procesar tu registro en <strong>Pizzería Bella Napoli</strong></p>
+    </div>
+
+    <div class="alert-error" role="alert">
+      {{#if mensaje}}
+        {{mensaje}}
+      {{else}}
+        Ocurrió un problema inesperado al guardar tus datos en la base de datos. Por favor, intentá nuevamente en unos minutos.
+      {{/if}}
+    </div>
+
+    <div class="login-header">
+      <p>Si el inconveniente persiste, podés comunicarte con nosotros desde la sección de contacto.</p>
+    </div>
+
+    <div class="form-actions">
+      <a href="{{#if registerUrl}}{{registerUrl}}{{else}}/registro{{/if}}" class="btn btn-primary" style="text-align: center; text-decoration: none;">
+        Volver a intentar
+      </a>
+      <a href="{{#if homeUrl}}{{homeUrl}}{{else}}/{{/if}}" class="btn btn-secondary" style="text-align: center; text-decoration: none;">
+        Ir al inicio
+      </a>
+    </div>
+  </div>
+</section>
